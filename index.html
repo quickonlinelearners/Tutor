@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Online Learners - Achieve Academic Excellence</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
+    <style>
+        /* --- General Styling & Font Setup --- */
+        :root {
+            --primary-color: #1a73e8; /* Google Blue */
+            --secondary-color: #ffb703; /* Bright Yellow/Gold Accent */
+            --dark-bg: #222;
+            --light-bg: #f5f5f5;
+            --body-font: 'Poppins', sans-serif;
+            --header-font: 'Lora', serif;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: var(--body-font);
+            color: var(--dark-bg);
+            background-color: white;
+            line-height: 1.7;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--header-font);
+            font-weight: 700;
+            line-height: 1.2;
+        }
+
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: color 0.3s;
+        }
+
+        a:hover {
+            color: var(--secondary-color);
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            margin-top: 25px;
+            border-radius: 5px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: background-color 0.3s, transform 0.2s;
+            cursor: pointer;
+            text-align: center;
+        }
+
+        .btn-primary {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #155bbd;
+            transform: translateY(-2px);
+        }
+
+        /* --- Header & Navigation --- */
+        header {
+            background-color: white;
+            padding: 15px 0;
+            border-bottom: 2px solid var(--primary-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+        }
+
+        header .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.6em;
+            color: var(--primary-color);
+            font-weight: 700;
+        }
+
+        nav a {
+            color: var(--dark-bg);
+            margin-left: 25px;
+            font-size: 0.95em;
+            font-weight: 600;
+        }
+        
+        nav a:hover {
+            color: var(--primary-color);
+        }
+
+        /* --- Hero Section --- */
+        #hero {
+            background: url('https://via.placeholder.com/1920x600/e0e0e0/1a73e8?text=Student+Studying+with+Online+Tutor') center/cover no-repeat;
+            height: 60vh;
+            color: var(--dark-bg);
+            display: flex;
+            align-items: center;
+            position: relative;
+        }
+        
+        #hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(255, 255, 255, 0.85); /* Light overlay for readability */
+        }
+
+        #hero .container {
+            position: relative;
+            z-index: 10;
+            max-width: 600px;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        #hero h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        #hero p {
+            font-size: 1.2em;
+            font-weight: 500;
+        }
+
+        /* --- Section Styling --- */
+        section {
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .section-light {
+            background-color: var(--light-bg);
+        }
+
+        h2 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            color: var(--dark-bg);
+        }
+
+        .section-subtitle {
+            font-size: 1.1em;
+            margin-bottom: 50px;
+            color: #666;
+        }
+
+        /* --- Services Section --- */
+        #services .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            transition: box-shadow 0.3s, transform 0.3s;
+        }
+        
+        .service-card:hover {
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transform: translateY(-5px);
+        }
+
+        .service-card h3 {
+            color: var(--primary-color);
+            margin-top: 15px;
+            margin-bottom: 10px;
+        }
+        
+        /* --- Testimonials Section --- */
+        #testimonials {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        #testimonials h2 {
+            color: var(--secondary-color);
+        }
+
+        .testimonial-quote {
+            max-width: 800px;
+            margin: 0 auto 30px;
+            font-style: italic;
+            font-size: 1.2em;
+        }
+        
+        .testimonial-source {
+            font-weight: 600;
+            font-size: 1em;
+            color: var(--secondary-color);
+        }
+        
+        /* --- Contact Section --- */
+        #contact .contact-details {
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        #contact p {
+            margin-bottom: 15px;
+        }
+
+        /* --- Footer --- */
+        footer {
+            background-color: var(--dark-bg);
+            color: #ccc;
+            padding: 30px 0;
+            text-align: center;
+            font-size: 0.9em;
+        }
+
+        footer p {
+            margin-bottom: 10px;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="#hero" class="logo">Quick Online Learners</a>
+            <nav>
+                <a href="#services">Services</a>
+                <a href="#about">About Us</a>
+                <a href="#testimonials">Success Stories</a>
+                <a href="#contact" class="btn btn-primary" style="margin-top: 0; padding: 8px 15px;">Book Now</a>
+            </nav>
+        </div>
+    </header>
+
+    <section id="hero">
+        <div id="hero-overlay"></div>
+        <div class="container">
+            <h1>Achieve Academic Excellence with QOL</h1>
+            <p>Personalized, effective one-on-one **online** tutoring for K-12 and College Prep.</p>
+            <a href="#contact" class="btn btn-primary">Schedule Your Free Consultation</a>
+        </div>
+    </section>
+
+    <section id="services" class="section-light">
+        <div class="container">
+            <h2>Our Specialized Tutoring Services</h2>
+            <p class="section-subtitle">We offer targeted support to build confidence and mastery in core subjects.</p>
+            
+            <div class="service-grid">
+                
+                <div class="service-card">
+                    
+                    <h3>Mathematics</h3>
+                    <p>Algebra, Geometry, Calculus (AP/IB), Statistics. Conceptual understanding over memorization.</p>
+                </div>
+
+                <div class="service-card">
+                    
+
+[Image of Lab diagrams and online tools]
+
+                    <h3>Science</h3>
+                    <p>Biology, Chemistry, Physics. Clarifying complex topics and preparing for lab practicals.</p>
+                </div>
+
+                <div class="service-card">
+                    
+                    <h3>Test Preparation</h3>
+                    <p>SAT, ACT, GRE, and specialized AP/IB subject tests. Strategic skills development and practice exams.</p>
+                </div>
+                
+                <div class="service-card">
+                    
+                    <h3>Writing & English</h3>
+                    <p>Essay structuring, grammar, literature analysis, and critical reading comprehension.</p>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+    
+    <section id="about">
+        <div class="container">
+            <h2>Why Choose Quick Online Learners?</h2>
+            <div style="max-width: 900px; margin: 0 auto;">
+                <p>**Quick Online Learners (QOL)** was founded by [Founder's Name/Story] with the belief that every student can excel when given the right tools and attention, regardless of location. We don't just teach the material; we teach **how to learn effectively online**.</p>
+                <div style="display: flex; justify-content: space-around; margin-top: 40px;">
+                    <ul style="list-style: none; text-align: left;">
+                        <li>✅ **Personalized Curriculum:** Plans tailored to individual learning styles.</li>
+                        <li>✅ **Proven Results:** Track record of improving grades by an average of 1.5 letter grades.</li>
+                    </ul>
+                    <ul style="list-style: none; text-align: left;">
+                        <li>✅ **Flexible Scheduling:** All sessions are conducted conveniently online.</li>
+                        <li>✅ **Expert Tutors:** Highly qualified educators with subject-specific degrees.</li>
+                    </ul>
+                </div>
+            </div>
+            <a href="#contact" class="btn btn-primary">Meet Our Tutors</a>
+        </div>
+    </section>
+    
+    <section id="testimonials">
+        <div class="container">
+            <h2>Success Stories</h2>
+            
+            <p class="testimonial-quote">"The flexibility of QOL's online sessions made it easy to fit tutoring into our busy schedule. My daughter went from dreading Physics to understanding and actually enjoying it!"</p>
+            <p class="testimonial-source">— Sarah L., Parent of High School Student</p>
+            
+            <p class="testimonial-quote">"The SAT prep was fantastic. I raised my score by 150 points and felt completely confident on test day. Highly recommend their strategic approach."</p>
+            <p class="testimonial-source">— Michael D., College Applicant</p>
+            
+        </div>
+    </section>
+
+    <section id="contact" class="section-light">
+        <div class="container">
+            <h2>Ready to Begin Your Success Story?</h2>
+            <div class="contact-details">
+                <p>Contact us today to discuss your academic needs and set up your first session.</p>
+                <p><strong>Email:</strong> <a href="mailto:info@qol-tutoring.com">info@qol-tutoring.com</a></p>
+                <p><strong>Phone:</strong> (555) 555-TUTOR</p>
+                
+                [Placeholder: Simple Contact Form (Name, Email, Subject of Interest)]
+            </div>
+            <a href="#" class="btn btn-primary">I Need Help Now!</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <p>Quick Online Learners | Dedicated to Academic Excellence</p>
+            <p>&copy; 2025 Quick Online Learners. All Rights Reserved. | <a href="#">Policies</a></p>
+        </div>
+    </footer>
+
+</body>
+</html>
